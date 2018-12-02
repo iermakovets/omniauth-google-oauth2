@@ -146,7 +146,7 @@ module OmniAuth
       def image_url
         return nil unless raw_info['picture']
 
-        u = URI.parse(raw_info['picture'].gsub('https:https', 'https'))
+        u = URI.parse(raw_info['picture'].gsub('https:https', 'https').sub('/mo/photo', '/photo'))
 
         path_index = u.path.to_s.index('/photo.jpg')
 
